@@ -21,7 +21,7 @@
             <input type="checkbox" id="checkbox" onclick="showMyFunction()">
             <label for="checkbox">Tampilkan Kata Sandi</label>
         </div>
-        <button>Masuk</button>
+        <a href="<?= base_url('admin') ?>"><button>Masuk</button></a>
         <div class="member">
             Belum punya akun? <a href="<?= base_url('register') ?>">Daftar disini</a>
         </div>
