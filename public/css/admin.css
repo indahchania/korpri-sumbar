@@ -8,7 +8,7 @@
 }
 
 body {
-    background-image: linear-gradient(to top, transparent 1%, #ffffff 20%), url("<?= base_url('img/wallpaper.png') ?>");  
+    background-image: linear-gradient(to top, transparent 1%, #ffffff 20%), url("/img/wallpaper.png"); 
     min-height: 100vh;
     background-position: center;
     background-size: cover; 
