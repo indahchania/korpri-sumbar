@@ -33,4 +33,9 @@ class Home extends BaseController
     {
         return view('admin/pages');
     }
+
+    public function karir()
+    {
+        return view('admin/karir');
+    }
 }
