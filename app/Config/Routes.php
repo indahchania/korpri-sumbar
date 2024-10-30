@@ -10,3 +10,4 @@ $routes->get('/register', 'Home::register');
 $routes->get('/login', 'Home::login');
 $routes->get('/admin', 'Home::admin');
 $routes->get('/konten', 'Home::konten');
+$routes->get('/pages', 'Home::pages');

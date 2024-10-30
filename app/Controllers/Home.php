@@ -28,4 +28,9 @@ class Home extends BaseController
     {
         return view('admin/konten');
     }
+
+    public function pages()
+    {
+        return view('admin/pages');
+    }
 }
