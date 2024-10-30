@@ -23,4 +23,9 @@ class Home extends BaseController
     {
         return view('admin/index');
     }
+
+    public function konten()
+    {
+        return view('admin/konten');
+    }
 }

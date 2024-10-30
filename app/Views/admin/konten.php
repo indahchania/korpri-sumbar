@@ -104,7 +104,7 @@
                     <label for="file">File</label>
                     <input type="file" id="file"><br>
 
-                    <label for="kategori">Kategori</label>
+                    <label for="status">Status</label>
                     <select name="status" id="status">
                         <option value="publik">Publik</option>
                         <option value="draft">Draft</option>
