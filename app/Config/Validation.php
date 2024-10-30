@@ -7,6 +7,7 @@ use CodeIgniter\Validation\StrictRules\CreditCardRules;
 use CodeIgniter\Validation\StrictRules\FileRules;
 use CodeIgniter\Validation\StrictRules\FormatRules;
 use CodeIgniter\Validation\StrictRules\Rules;
+use Myth\Auth\Password;
 
 class Validation extends BaseConfig
 {
@@ -20,11 +21,12 @@ class Validation extends BaseConfig
      *
      * @var list<string>
      */
-    public array $ruleSets = [
-        Rules::class,
-        FormatRules::class,
-        FileRules::class,
-        CreditCardRules::class,
+    public $ruleSets = [
+        \CodeIgniter\Validation\Rules::class,
+        \CodeIgniter\Validation\FormatRules::class,
+        \CodeIgniter\Validation\FileRules::class,
+        \CodeIgniter\Validation\CreditCardRules::class,
+        \Myth\Auth\Authentication\Passwords\ValidationRules::class,
     ];
 
     /**
