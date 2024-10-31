@@ -93,7 +93,7 @@
                 </select>
 
                 <label for="isi">Isi</label>
-                <input type="text" id="isi" class="isi-lebar"><br>
+                <textarea id="isi" class="isi-lebar"></textarea><br>
 
                 <label for="gambar">Gambar</label>
                 <input type="file" id="gambar" accept="image/png, image/jpeg"><br>
