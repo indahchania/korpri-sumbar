@@ -40,7 +40,7 @@
                 </li>
 
                 <li>
-                    <a href="<?= base_url('create_pages') ?>">
+                    <a href="<?= base_url('pages') ?>">
                         <span class="icon">
                             <ion-icon name="book-outline"></ion-icon>
                         </span>
@@ -49,7 +49,7 @@
                 </li>
 
                 <li>
-                    <a href="<?= base_url('create_karir') ?>">
+                    <a href="<?= base_url('karir') ?>">
                         <span class="icon">
                             <ion-icon name="business-outline"></ion-icon>
                         </span>

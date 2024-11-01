@@ -31,7 +31,7 @@
                 </li>
 
                 <li>
-                    <a href="<?= base_url('create_konten') ?>">
+                    <a href="<?= base_url('konten') ?>">
                         <span class="icon">
                             <ion-icon name="albums-outline"></ion-icon>
                         </span>
@@ -40,7 +40,7 @@
                 </li>
 
                 <li>
-                    <a href="<?= base_url('create_pages') ?>">
+                    <a href="<?= base_url('pages') ?>">
                         <span class="icon">
                             <ion-icon name="book-outline"></ion-icon>
                         </span>
