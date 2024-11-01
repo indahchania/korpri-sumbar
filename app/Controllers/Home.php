@@ -38,4 +38,19 @@ class Home extends BaseController
     {
         return view('admin/karir');
     }
+
+    public function create_konten()
+    {
+        return view('admin/create_konten');
+    }
+
+    public function create_pages()
+    {
+        return view('admin/create_pages');
+    }
+
+    public function create_karir()
+    {
+        return view('admin/create_karir');
+    }
 }

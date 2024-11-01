@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <link rel="stylesheet" href="<?= base_url('css/konten.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('css/create_konten.css') ?>">
 </head>
 <body>
     <!-- navbar !-->
@@ -30,8 +30,8 @@
                     </a>
                 </li>
 
-                <li class="active-page">
-                    <a href="#">
+                <li>
+                     <a href="<?= base_url('konten') ?>">
                         <span class="icon">
                             <ion-icon name="albums-outline"></ion-icon>
                         </span>
@@ -39,8 +39,8 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="<?= base_url('pages') ?>">
+                <li class="active-page">
+                    <a href="#">
                         <span class="icon">
                             <ion-icon name="book-outline"></ion-icon>
                         </span>
@@ -78,41 +78,35 @@
                 </div>
             </div>
         </div>
-            <div class="konten-wrap">
-                <div class="konten-isi">
-                    <h1>Konten</h1>
-                    <label for="kategori">Kategori</label>
-                    <select name="kategori" id="kategori">
-                        <option value="berita">Berita</option>
-                        <option value="kegiatan">Kegiatan</option>
-                        <option value="pengumuman">Pengumuman</option>
-                        <option value="publikasi-resmi">Publikasi Resmi</option>
-                    </select>
+        <div class="konten-wrap">
+            <div class="konten-isi">
+                <h1>Pages</h1>
 
-                    <br><label for="judul">Judul</label>
-                    <input type="text" id="judul"><br>
+                <br><label for="kategori">Kategori</label>
+                <input type="text" id="kategori"><br>
 
-                    <label for="author">Author</label>
-                    <input type="text" id="judul"><br>
+                <br><label for="judul">Judul</label>
+                <input type="text" id="judul"><br>
 
-                    <label for="isi">Isi</label>
-                    <textarea id="isi" class="isi-lebar"></textarea><br>
+                <label for="author">Author</label>
+                <input type="text" id="judul"><br>
 
-                    <label for="gambar">Gambar</label>
-                    <input type="file" id="gambar" accept="image/png, image/jpeg"><br>
+                <label for="isi">Isi</label>
+                <textarea id="isi" class="isi-lebar"></textarea><br>
 
-                    <label for="file">File</label>
-                    <input type="file" id="file"><br>
+                <label for="gambar">Gambar</label>
+                <input type="file" id="gambar" accept="image/png, image/jpeg"><br>
 
-                    <label for="status">Status</label>
-                    <select name="status" id="status">
-                        <option value="publik">Publik</option>
-                        <option value="draft">Draft</option>
-                        <option value="arsip">Arsip</option>
-                    </select>
-                    <br><input type="submit" value="Simpan" class="simpan">
-                </div>
+                <label for="status">Kategori</label>
+                <select name="status" id="status">
+                    <option value="publik">Publik</option>
+                    <option value="draft">Draft</option>
+                    <option value="arsip">Arsip</option>
+                </select>
+
+                <br><input type="submit" value="Simpan" class="simpan">
             </div>
+        </div>
     </div>
 
     <!-- script !-->
