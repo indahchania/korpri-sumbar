@@ -223,7 +223,7 @@ body {
     color: #143257;
 }
 
-.konten-wrap .konten-isi {
+.konten-wrap .konten-isi form{
     color: #143257;
     display: grid;
     grid-template-columns: 130px 0.8fr;
@@ -231,14 +231,14 @@ body {
     z-index: 10;
 }
 
-.konten-wrap .konten-isi label{
+.konten-wrap .konten-isi form label{
     font-size: 18px;
     font-weight: semi-bold;
     color: #143257;
     grid-column: 1 / 2;
 }
 
-.konten-wrap .konten-isi input{
+.konten-wrap .konten-isi form input{
     font-size: 18px;
     color: #143257;
     border-radius: 13px;
@@ -246,7 +246,7 @@ body {
     z-index: 1;
 }
 
-.konten-wrap .konten-isi select{
+.konten-wrap .konten-isi form select{
     font-size: 18px;
     color: #143257;
     background-color: #ffffff;
@@ -265,15 +265,6 @@ body {
     z-index: 1;
 }
 
-.konten-wrap .konten-isi button {
-    position: relative;
-    font-size: 18px;
-    color: #143257;
-    border-radius: 13px;
-    grid-column: 2 / 3;
-    z-index: 1;
-    background-color: #CC9A36;
-}
 
 .main.active ~ .konten-wrap {
     margin-left: 200px;

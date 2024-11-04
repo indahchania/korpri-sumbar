@@ -81,36 +81,38 @@
             <div class="konten-wrap">
                 <div class="konten-isi">
                     <h1>Konten</h1>
-                    <label for="kategori">Kategori</label>
-                    <select name="kategori" id="kategori">
-                        <option value="berita">Berita</option>
-                        <option value="kegiatan">Kegiatan</option>
-                        <option value="pengumuman">Pengumuman</option>
-                        <option value="publikasi-resmi">Publikasi Resmi</option>
-                    </select>
+                    <form action="<?= base_url('/create_konten') ?>" method="POST">
+                        <label for="kategori">Kategori</label>
+                        <select name="content_category" id="kategori">
+                            <option value="berita">Berita</option>
+                            <option value="kegiatan">Kegiatan</option>
+                            <option value="pengumuman">Pengumuman</option>
+                            <option value="publikasi-resmi">Publikasi Resmi</option>
+                        </select>
 
-                    <br><label for="judul">Judul</label>
-                    <input type="text" id="judul"><br>
+                        <br><label for="judul">Judul</label>
+                        <input type="text" id="judul" name="content_title"><br>
 
-                    <label for="author">Author</label>
-                    <input type="text" id="judul"><br>
+                        <label for="author">Author</label>
+                        <input type="text" id="judul" name="content_author"><br>
 
-                    <label for="isi">Isi</label>
-                    <textarea id="isi" class="isi-lebar"></textarea><br>
+                        <label for="isi">Isi</label>
+                        <textarea id="isi" class="isi-lebar" name="content_body"></textarea><br>
 
-                    <label for="gambar">Gambar</label>
-                    <input type="file" id="gambar" accept="image/png, image/jpeg"><br>
+                        <label for="gambar">Gambar</label>
+                        <input type="file" id="gambar" accept="image/png, image/jpeg" name="content_img"><br>
 
-                    <label for="file">File</label>
-                    <input type="file" id="file"><br>
+                        <label for="file">File</label>
+                        <input type="file" id="file" name="content_file"><br>
 
-                    <label for="status">Status</label>
-                    <select name="status" id="status">
-                        <option value="publik">Publik</option>
-                        <option value="draft">Draft</option>
-                        <option value="arsip">Arsip</option>
-                    </select>
-                    <br><a href="<?= base_url('konten') ?>"><button>Simpan</button></a>
+                        <label for="status">Status</label>
+                        <select name="content_status" id="status">
+                            <option value="publik">Publik</option>
+                            <option value="draft">Draft</option>
+                            <option value="arsip">Arsip</option>
+                        </select>
+                        <br><input type="submit" value="Simpan" class="simpan">
+                    </form>
                 </div>
             </div>
     </div>
