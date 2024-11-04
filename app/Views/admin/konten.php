@@ -104,7 +104,7 @@
                             <td>Berita</td>
                             <td>Penghargaan</td>
                             <td>admin1</td>
-                            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</td>
+                            <td class="isi-cell">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, omnis, harum aliquam, consectetur nemo laboriosam maiores voluptatem nihil ab quisquam nulla non quod ipsum aspernatur soluta minima modi molestiae numquam! Commodi similique repellat reiciendis laborum eos enim? Veniam, nulla perferendis!</td>
                             <td><img src="<?= base_url('img/award.jpg') ?>"></td>
                             <td><a href="<?= base_url('file/award.pdf') ?>">award.pdf</a></td>
                             <td>Publik</td>
@@ -118,7 +118,7 @@
                             <td>Kegiatan</td>
                             <td>Senam Pagi</td>
                             <td>admin1</td>
-                            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</td>
+                            <td class="isi-cell">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</td>
                             <td><img src="<?= base_url('img/senam.jpg') ?>"></td>
                             <td><a href="<?= base_url('file/senam.pdf') ?>">senam.pdf</a></td>
                             <td>Publik</td>

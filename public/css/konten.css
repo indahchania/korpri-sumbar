@@ -264,6 +264,13 @@ body {
     text-align: left;
 }
 
+.isi-konten .isi-dalam-konten tbody tr td.isi-cell {
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .isi-konten .isi-dalam-konten button {
     font-size: 1rem;
     padding: 5px 5px;
