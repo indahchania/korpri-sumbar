@@ -31,7 +31,7 @@
                 </li>
 
                 <li class="active-page">
-                    <a href="#">
+                    <a href="<?= base_url('konten') ?>">
                         <span class="icon">
                             <ion-icon name="albums-outline"></ion-icon>
                         </span>
