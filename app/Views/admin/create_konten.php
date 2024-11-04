@@ -110,7 +110,7 @@
                         <option value="draft">Draft</option>
                         <option value="arsip">Arsip</option>
                     </select>
-                    <br><input type="submit" value="Simpan" class="simpan">
+                    <br><a href="<?= base_url('konten') ?>"><button>Simpan</button></a>
                 </div>
             </div>
     </div>
