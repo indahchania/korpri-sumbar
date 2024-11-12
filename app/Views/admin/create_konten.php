@@ -81,7 +81,7 @@
             <div class="konten-wrap">
                 <div class="konten-isi">
                     <h1>Konten</h1>
-                    <form action="<?= base_url('/create_konten') ?>" method="POST">
+                    <form action="<?php echo base_url('/create_konten') ?>" method="POST">
                         <label for="kategori">Kategori</label>
                         <select name="content_category" id="kategori">
                             <option value="berita">Berita</option>
