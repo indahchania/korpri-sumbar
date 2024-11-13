@@ -40,7 +40,7 @@ class Login extends BaseController
                 //password tidak valid
                 session()->setFlashdata('pesan', 'Kata Sandi Salah!');
                 return redirect()->to('/login');
-            } 
+            }
         }else {
             session()->setFlashdata('pesan', 'Nama Pengguna Salah!');
             return redirect()->to('/login');

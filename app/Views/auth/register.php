@@ -10,17 +10,17 @@
 <body>
     <div class="wrapper">
         <h1>Register</h1>
-        <form action="#">
-            <input type="text" placeholder="Nama">
-            <input type="text" placeholder="Nama Pengguna">
-            <input type="email" placeholder="Email">
-            <input type="password" id="password" placeholder="Kata Sandi">
+        <form action="<?php echo base_url('/register/action') ?>" method="POST">
+            <input required type="text" name="nama" placeholder="Nama">
+            <input required type="text" name="username" placeholder="Nama Pengguna">
+            <input required type="email" name="email" placeholder="Email">
+            <input required type="password" id="password" name="password" placeholder="Kata Sandi">
+            <button type="submit">Daftar</button>
         </form>
         <div class="terms">
             <input type="checkbox" id="checkbox" onclick="showMyFunction()">
             <label for="checkbox">Tampilkan Kata Sandi</label>
         </div>
-        <button>Register</button>
         <div class="member">
             Sudah punya akun? <a href="<?= base_url('login') ?>">Masuk disini</a>
         </div>
