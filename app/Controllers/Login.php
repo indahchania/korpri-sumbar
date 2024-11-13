@@ -23,8 +23,26 @@ class Login extends BaseController
 
         if ($cek) {
             //valid
+            $checkPassword = password_verify($password, $cek['users_pass']);
+            if ($checkPassword) {
+                //password valid
+                $sessData = [
+                    'users_id' => $cek['users_id'],
+                    'users_uname' => $cek['users_uname'],
+                    'users_nama' => $cek['users_name'],
+                    'users_email' => $cek['users_email'],
+                    'users_status' => $cek['users_status'],
+                    'logged_in' => TRUE
+                ];
+                $session->set($sessData);
+                return redirect()->to('/admin');
+            }else {
+                //password tidak valid
+                session()->setFlashdata('pesan', 'Kata Sandi Salah!');
+                return redirect()->to('/login');
+            } 
         }else {
-            session()->setFlashdata('pesan', 'Login Gagal!');
+            session()->setFlashdata('pesan', 'Nama Pengguna Salah!');
             return redirect()->to('/login');
         }
     }
