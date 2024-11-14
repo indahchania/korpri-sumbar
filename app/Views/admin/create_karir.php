@@ -58,7 +58,7 @@
                 </li>
 
                 <li>
-                    <a href="<?= base_url('login') ?>">
+                    <a href= "<?php echo base_url('/logout') ?>" method="get">
                         <span class="icon">
                             <ion-icon name="exit-outline"></ion-icon>
                         </span>

@@ -12,6 +12,7 @@ $routes->post('/register/action', 'Register::registerAction');
 
 $routes->get('/login', 'Login::index');
 $routes->post('/login/action', 'Login::loginAction');
+$routes->get('/logout', 'Login::logout');
 
 $routes->get('/admin', 'Home::admin');
 
