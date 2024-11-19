@@ -49,7 +49,7 @@
                 </li>
 
                 <li class="active-page">
-                    <a href="#">
+                    <a href="<?= base_url('karir') ?>">
                         <span class="icon">
                             <ion-icon name="business-outline"></ion-icon>
                         </span>
@@ -81,30 +81,31 @@
         <div class="konten-wrap">
             <div class="konten-isi">
                 <h1>Karir</h1>
+                <form action="<?php echo base_url('/create_karir') ?>" method="POST">
+                    <br><label for="judul">Judul</label>
+                    <input type="text" id="judul"><br>
 
-                <br><label for="judul">Judul</label>
-                <input type="text" id="judul"><br>
+                    <label for="kategori">Kategori</label>
+                        <select name="kategori" id="kategori">
+                            <option value="fulltime">Fulltime</option>
+                            <option value="kontrak">Kontrak</option>
+                            <option value="magang">Magang</option>
+                        </select>
 
-                <label for="kategori">Kategori</label>
-                <select name="kategori" id="kategori">
-                    <option value="fulltime">Fulltime</option>
-                    <option value="kontrak">Kontrak</option>
-                    <option value="magang">Magang</option>
-                </select>
+                    <label for="isi">Isi</label>
+                    <textarea id="isi" class="isi-lebar"></textarea><br>
 
-                <label for="isi">Isi</label>
-                <textarea id="isi" class="isi-lebar"></textarea><br>
+                    <label for="gambar">Gambar</label>
+                    <input type="file" id="gambar" accept="image/png, image/jpeg"><br>
 
-                <label for="gambar">Gambar</label>
-                <input type="file" id="gambar" accept="image/png, image/jpeg"><br>
-
-                <label for="kategori">Kategori</label>
-                <select name="status" id="status">
-                    <option value="publik">Publik</option>
-                    <option value="draft">Draft</option>
-                    <option value="arsip">Arsip</option>
-                </select>
-                <br><input type="submit" value="Simpan" class="simpan">
+                    <label for="kategori">Kategori</label>
+                        <select name="status" id="status">
+                            <option value="publik">Publik</option>
+                            <option value="draft">Draft</option>
+                            <option value="arsip">Arsip</option>
+                        </select>
+                    <br><input type="submit" value="Simpan" class="simpan">
+                </form>
             </div>
         </div>        
     </div>

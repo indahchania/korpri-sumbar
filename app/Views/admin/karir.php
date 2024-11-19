@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konten</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link rel="stylesheet" href="<?= base_url('css/konten.css') ?>">
 </head>
@@ -30,8 +30,8 @@
                     </a>
                 </li>
 
-                <li class="active-page">
-                    <a href="#">
+                <li>
+                    <a href="<?= base_url('konten') ?>">
                         <span class="icon">
                             <ion-icon name="albums-outline"></ion-icon>
                         </span>
@@ -48,8 +48,8 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="<?= base_url('karir') ?>">
+                <li class="active-page">
+                    <a href="#">
                         <span class="icon">
                             <ion-icon name="business-outline"></ion-icon>
                         </span>
@@ -78,50 +78,33 @@
                 </div>
             </div>
         </div>
-
         <div class="isi-konten">
             <div class="isi-dalam-konten">
-                <h1>Konten</h1>
+                <h1>Karir</h1>
                 <div class="nambah-konten">
-                    <a href="<?= base_url('create_konten') ?>"><button>Tambah Konten</button></a>
+                    <a href="<?= base_url('create_karir') ?>"><button>Tambah Karir</button></a>
                 </div>
                 <br>
-<table border="1">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Isi</th>
-            <th>Gambar</th>
-            <th>File</th>
-            <th>Status</th>
-            <th>Category</th>
-            <th>Aksi</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($contents as $content): ?>
-            <tr>
-                <td><?= esc($content['content_id']) ?></td>
-                <td><?= esc($content['content_title']) ?></td>
-                <td><?= esc($content['content_author']) ?></td>
-                <td><?= esc($content['content_body']) ?></td>
-                <td><?= esc($content['content_img']) ?></td>
-                <td><?= esc($content['content_file']) ?></td>
-                <td><?= esc($content['content_status']) ?></td>
-                <td><?= esc($content['category_name']) ?></td>
-            </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
+                <table class="konten-isi">
+                    <thead>
+                        <tr>
+                            <th>Judul</th>
+                            <th>Kategori</th>
+                            <th>Isi</th>
+                            <th>Gambar</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </div>
+    </div>
 
-        <!-- script !-->
-        <script src="<?= base_url('js/admin.js') ?>"></script>
-        <!-- ionicons !-->
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- script !-->
+    <script src="<?= base_url('js/admin.js') ?>"></script>
+    <!-- ionicons !-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

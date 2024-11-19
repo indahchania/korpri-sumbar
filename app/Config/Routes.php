@@ -16,15 +16,14 @@ $routes->get('/logout', 'Login::logout');
 
 $routes->get('/admin', 'Home::admin');
 
-$routes->get('/konten', 'Home::konten');
+$routes->get('/pages', 'Pages::index');
+$routes->get('/create_pages', 'Pages::create_pages');
+$routes->post('/create_pages', 'Pages::create_pages');
 
-$routes->get('/pages', 'Home::pages');
+$routes->get('/karir', 'Karir::index');
+$routes->get('/create_karir', 'Karir::create_karir');
+$routes->post('/create_karir', 'Karir::save_karir');
 
-$routes->get('/karir', 'Home::karir');
-
-$routes->get('/create_konten', 'Home::create_konten');
-$routes->post('/create_konten', 'Home::save_konten');
-
-$routes->get('/create_pages', 'Home::create_pages');
-
-$routes->get('/create_karir', 'Home::create_karir');
+$routes->get('/konten', 'Konten::index');
+$routes->get('/create_konten', 'Konten::create_konten');
+$routes->post('/save_konten', 'Konten::save_konten');

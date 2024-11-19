@@ -40,7 +40,7 @@
                 </li>
 
                 <li class="active-page">
-                    <a href="#">
+                    <a href="<?= base_url('pages') ?>">
                         <span class="icon">
                             <ion-icon name="book-outline"></ion-icon>
                         </span>
@@ -74,37 +74,45 @@
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
                 <div class="user">
-                    <ion-icon name="person-circle-outline"></ion-icon>
+                    <img src="img" alt="">
                 </div>
             </div>
         </div>
         <div class="konten-wrap">
             <div class="konten-isi">
                 <h1>Pages</h1>
+                <form action="<?php echo base_url('/create_pages') ?>" method="POST">
+                    <br><label for="kategori">Kategori</label>
+                        <select name="content_category" id="kategori">
+                            <option value="sejarah">Sejarah</option>
+                            <option value="visiMisi">Visi dan Misi</option>
+                            <option value="tujuanFungsi">Tujuan dan Fungsi</option>
+                            <option value="pancaPrasetya">Panca Prasetya</option>
+                            <option value="strukturOrganisasi">Struktur Organisasi</option>
+                            <option value="programUtama">Program Utama</option>
+                        </select><br>
 
-                <br><label for="kategori">Kategori</label>
-                <input type="text" id="kategori"><br>
+                    <br><label for="judul">Judul</label>
+                    <input type="text" id="judul"><br>
 
-                <br><label for="judul">Judul</label>
-                <input type="text" id="judul"><br>
+                    <label for="author">Author</label>
+                    <input type="text" id="judul"><br>
 
-                <label for="author">Author</label>
-                <input type="text" id="judul"><br>
+                    <label for="isi">Isi</label>
+                    <textarea id="isi" class="isi-lebar"></textarea><br>
 
-                <label for="isi">Isi</label>
-                <textarea id="isi" class="isi-lebar"></textarea><br>
+                    <label for="gambar">Gambar</label>
+                    <input type="file" id="gambar" accept="image/png, image/jpeg"><br>
 
-                <label for="gambar">Gambar</label>
-                <input type="file" id="gambar" accept="image/png, image/jpeg"><br>
+                    <label for="status">Status</label>
+                    <select name="status" id="status">
+                        <option value="publik">Publik</option>
+                        <option value="draft">Draft</option>
+                        <option value="arsip">Arsip</option>
+                    </select>
 
-                <label for="status">Kategori</label>
-                <select name="status" id="status">
-                    <option value="publik">Publik</option>
-                    <option value="draft">Draft</option>
-                    <option value="arsip">Arsip</option>
-                </select>
-
-                <br><input type="submit" value="Simpan" class="simpan">
+                    <br><input type="submit" value="Simpan" class="simpan">
+                </form>
             </div>
         </div>
     </div>

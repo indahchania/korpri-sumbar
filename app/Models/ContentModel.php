@@ -6,41 +6,27 @@ use CodeIgniter\Model;
 
 class ContentModel extends Model
 {
-    protected $table            = 'content';
-    protected $primaryKey       = 'content_id';
-    protected $useAutoIncrement = true;
-    protected $returnType       = 'array';
-    protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields    = ["content_title", "content_author", "content_body", "content_img", "content_file", "content_status", "content_category"];
+    protected $table = 'content';
+    protected $primaryKey = 'content_id';
+    protected $allowedFields = [
+        'content_title', 'content_author', 'content_body', 'content_status', 
+        'content_category', 'content_img', 'content_file', 'users_id'
+    ];
 
-    protected bool $allowEmptyInserts = false;
-    protected bool $updateOnlyChanged = true;
+    public function getContentsWithCategory()
+    {
+        return $this->db->table($this->table)
+            ->select('content.*, content_category.category_name')
+            ->join('content_category', 'content.content_category = content_category.concategory_id', 'left')
+            ->get()
+            ->getResultArray();
+    }
 
-    protected array $casts = [];
-    protected array $castHandlers = [];
-
-    // Dates
-    protected $useTimestamps = false;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
-
-    // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
-
-    // Callbacks
-    protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
-    protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
-    protected $afterUpdate    = [];
-    protected $beforeFind     = [];
-    protected $afterFind      = [];
-    protected $beforeDelete   = [];
-    protected $afterDelete    = [];
+    public function getCategories()
+    {
+        return $this->db->table('content_category')
+            ->select('concategory_id, category_name')
+            ->get()
+            ->getResultArray();
+    }
 }
