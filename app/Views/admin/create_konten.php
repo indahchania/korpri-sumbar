@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <link rel="stylesheet" href="<?= base_url('css/konten.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('css/create_konten.css') ?>">
 </head>
 <body>
     <!-- navbar !-->
@@ -30,8 +30,8 @@
                     </a>
                 </li>
 
-                <li>
-                     <a href="<?= base_url('konten') ?>">
+                <li class="active-page">
+                    <a href="<?= base_url('konten') ?>">
                         <span class="icon">
                             <ion-icon name="albums-outline"></ion-icon>
                         </span>
@@ -39,8 +39,8 @@
                     </a>
                 </li>
 
-                <li class="active-page">
-                    <a href="#">
+                <li>
+                    <a href="<?= base_url('pages') ?>">
                         <span class="icon">
                             <ion-icon name="book-outline"></ion-icon>
                         </span>
@@ -58,7 +58,7 @@
                 </li>
 
                 <li>
-                    <a href="<?= base_url('login') ?>">
+                    <a href= "<?php echo base_url('/logout') ?>" method="get">
                         <span class="icon">
                             <ion-icon name="exit-outline"></ion-icon>
                         </span>
@@ -78,35 +78,43 @@
                 </div>
             </div>
         </div>
-        <div class="konten-wrap">
-            <div class="konten-isi">
-                <h1>Pages</h1>
+            <div class="konten-wrap">
+                <div class="konten-isi">
+                    <h1>Konten</h1>
+                    <form action="<?php echo base_url('/create_konten') ?>" method="POST">
+                        <label for="kategori">Kategori</label>
+                        <select name="content_category" id="kategori">
+                            <option value="berita">Berita</option>
+                            <option value="kegiatan">Kegiatan</option>
+                            <option value="pengumuman">Pengumuman</option>
+                            <option value="publikasi-resmi">Publikasi Resmi</option>
+                        </select>
 
-                <br><label for="kategori">Kategori</label>
-                <input type="text" id="kategori"><br>
+                        <br><label for="judul">Judul</label>
+                        <input type="text" id="judul" name="content_title"><br>
 
-                <br><label for="judul">Judul</label>
-                <input type="text" id="judul"><br>
+                        <label for="author">Author</label>
+                        <input type="text" id="judul" name="content_author"><br>
 
-                <label for="author">Author</label>
-                <input type="text" id="judul"><br>
+                        <label for="isi">Isi</label>
+                        <textarea id="isi" class="isi-lebar" name="content_body"></textarea><br>
 
-                <label for="isi">Isi</label>
-                <input type="text" id="isi" class="isi-lebar"><br>
+                        <label for="gambar">Gambar</label>
+                        <input type="file" id="gambar" accept="image/png, image/jpeg" name="content_img"><br>
 
-                <label for="gambar">Gambar</label>
-                <input type="file" id="gambar" accept="image/png, image/jpeg"><br>
+                        <label for="file">File</label>
+                        <input type="file" id="file" name="content_file"><br>
 
-                <label for="status">Kategori</label>
-                <select name="status" id="status">
-                    <option value="publik">Publik</option>
-                    <option value="draft">Draft</option>
-                    <option value="arsip">Arsip</option>
-                </select>
-
-                <br><input type="submit" value="Simpan" class="simpan">
+                        <label for="status">Status</label>
+                        <select name="content_status" id="status">
+                            <option value="publik">Publik</option>
+                            <option value="draft">Draft</option>
+                            <option value="arsip">Arsip</option>
+                        </select>
+                        <br><input type="submit" value="Simpan" class="simpan">
+                    </form>
+                </div>
             </div>
-        </div>
     </div>
 
     <!-- script !-->

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <link rel="stylesheet" href="<?= base_url('css/admin.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('css/create_konten.css') ?>">
 </head>
 <body>
     <!-- navbar !-->
@@ -21,8 +21,8 @@
                     </a>
                 </li>
 
-                <li class="active-page">
-                    <a href="#">
+                <li>
+                    <a href="<?= base_url('admin') ?>">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -48,8 +48,8 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="<?= base_url('karir') ?>">
+                <li class="active-page">
+                    <a href="#">
                         <span class="icon">
                             <ion-icon name="business-outline"></ion-icon>
                         </span>
@@ -78,36 +78,33 @@
                 </div>
             </div>
         </div>
-        <div class="isi-main">
-            <div class="isi-utama-main">
-                <div>
-                    <div class="icon-isi">
-                        <a href="<?= base_url('konten') ?>"><ion-icon name="albums-outline"></ion-icon></a>
-                    </div>
-                    <div class="isi-judul">
-                        <a href="<?= base_url('konten') ?>">Konten</a>
-                    </div>
-                </div>
-            </div>
-            <div class="isi-utama-main">
-                <div>
-                    <div class="icon-isi">
-                        <a href="<?= base_url('pages') ?>"><ion-icon name="book-outline"></ion-icon></a>
-                    </div>
-                    <div class="isi-judul">
-                        <a href="<?= base_url('pages') ?>">Pages</a>
-                    </div>
-                </div>
-            </div>
-            <div class="isi-utama-main">
-                <div>
-                    <div class="icon-isi">
-                        <a href="<?= base_url('karir') ?>"><ion-icon name="business-outline"></ion-icon></a>
-                    </div>
-                    <div class="isi-judul">
-                        <a href="<?= base_url('karir') ?>">Karir</a>
-                    </div>
-                </div>
+        <div class="konten-wrap">
+            <div class="konten-isi">
+                <h1>Karir</h1>
+
+                <br><label for="judul">Judul</label>
+                <input type="text" id="judul"><br>
+
+                <label for="kategori">Kategori</label>
+                <select name="kategori" id="kategori">
+                    <option value="fulltime">Fulltime</option>
+                    <option value="kontrak">Kontrak</option>
+                    <option value="magang">Magang</option>
+                </select>
+
+                <label for="isi">Isi</label>
+                <textarea id="isi" class="isi-lebar"></textarea><br>
+
+                <label for="gambar">Gambar</label>
+                <input type="file" id="gambar" accept="image/png, image/jpeg"><br>
+
+                <label for="kategori">Kategori</label>
+                <select name="status" id="status">
+                    <option value="publik">Publik</option>
+                    <option value="draft">Draft</option>
+                    <option value="arsip">Arsip</option>
+                </select>
+                <br><input type="submit" value="Simpan" class="simpan">
             </div>
         </div>        
     </div>

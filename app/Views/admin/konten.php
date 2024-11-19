@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Konten</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link rel="stylesheet" href="<?= base_url('css/konten.css') ?>">
 </head>
 <body>
     <!-- navbar !-->
-     <div class="container">
+    <div class="container">
         <div class="navigation">
             <ul>
                 <li>
@@ -58,7 +58,7 @@
                 </li>
 
                 <li>
-                    <a href="<?= base_url('login') ?>">
+                    <a href= "<?php echo base_url('/logout') ?>" method="get">
                         <span class="icon">
                             <ion-icon name="exit-outline"></ion-icon>
                         </span>
@@ -78,47 +78,66 @@
                 </div>
             </div>
         </div>
-            <div class="konten-wrap">
-                <div class="konten-isi">
-                    <h1>Konten</h1>
-                    <label for="kategori">Kategori</label>
-                    <select name="kategori" id="kategori">
-                        <option value="berita">Berita</option>
-                        <option value="kegiatan">Kegiatan</option>
-                        <option value="pengumuman">Pengumuman</option>
-                        <option value="publikasi-resmi">Publikasi Resmi</option>
-                    </select>
 
-                    <br><label for="judul">Judul</label>
-                    <input type="text" id="judul"><br>
-
-                    <label for="author">Author</label>
-                    <input type="text" id="judul"><br>
-
-                    <label for="isi">Isi</label>
-                    <input type="text" id="isi" class="isi-lebar"><br>
-
-                    <label for="gambar">Gambar</label>
-                    <input type="file" id="gambar" accept="image/png, image/jpeg"><br>
-
-                    <label for="file">File</label>
-                    <input type="file" id="file"><br>
-
-                    <label for="status">Status</label>
-                    <select name="status" id="status">
-                        <option value="publik">Publik</option>
-                        <option value="draft">Draft</option>
-                        <option value="arsip">Arsip</option>
-                    </select>
-                    <br><input type="submit" value="Simpan" class="simpan">
+        <div class="isi-konten">
+            <div class="isi-dalam-konten">
+                <h1>Konten</h1>
+                <div class="nambah-konten">
+                    <a href="<?= base_url('create_konten') ?>"><button>Tambah Konten</button></a>
                 </div>
-            </div>
-    </div>
+                <br>
+                <table class="konten-isi">
+                    <thead>
+                        <tr>
+                            <th>Kategori</th>
+                            <th>Judul</th>
+                            <th>Author</th>
+                            <th>Isi</th>
+                            <th>Gambar</th>
+                            <th>File</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Berita</td>
+                            <td>Penghargaan</td>
+                            <td>admin1</td>
+                            <td class="isi-cell">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, omnis, harum aliquam, consectetur nemo laboriosam maiores voluptatem nihil ab quisquam nulla non quod ipsum aspernatur soluta minima modi molestiae numquam! Commodi similique repellat reiciendis laborum eos enim? Veniam, nulla perferendis!</td>
+                            <td><img src="<?= base_url('img/award.jpg') ?>"></td>
+                            <td><a href="<?= base_url('file/award.pdf') ?>">award.pdf</a></td>
+                            <td>Publik</td>
+                            <td>
+                                <a href=""><button><ion-icon name="pencil-outline"></ion-icon></button></a>
+                                <a href=""><button><ion-icon name="archive-outline"></ion-icon></button></a>
+                                <a href=""><button><ion-icon name="trash-outline"></ion-icon></button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Kegiatan</td>
+                            <td>Senam Pagi</td>
+                            <td>admin1</td>
+                            <td class="isi-cell">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</td>
+                            <td><img src="<?= base_url('img/senam.jpg') ?>"></td>
+                            <td><a href="<?= base_url('file/senam.pdf') ?>">senam.pdf</a></td>
+                            <td>Publik</td>
+                            <td>
+                                <a href=""><button><ion-icon name="pencil-outline"></ion-icon></button></a>
+                                <a href=""><button><ion-icon name="archive-outline"></ion-icon></button></a>
+                                <a href=""><button><ion-icon name="trash-outline"></ion-icon></button></a>
+                            </td>
+                        </tr>
 
-    <!-- script !-->
-    <script src="<?= base_url('js/admin.js') ?>"></script>
-    <!-- ionicons !-->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- script !-->
+        <script src="<?= base_url('js/admin.js') ?>"></script>
+        <!-- ionicons !-->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

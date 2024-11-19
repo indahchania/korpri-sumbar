@@ -211,80 +211,62 @@ body {
     color: #143257;
 }
 
-.isi-konten {
-    margin-left: 300px;
+.konten-wrap {
+    margin-left: 400px;
     padding-top: 40px;
-    z-index: 1;
+    z-index: 10;
 }
 
-.isi-konten .isi-dalam-konten .nambah-konten {
-    position: relative;
-    z-index: 2;
-}
-
-.isi-konten .isi-dalam-konten h1 {
+.konten-wrap .konten-isi h1 {
     font-size: 2rem;
     font-weight: bold;
     color: #143257;
 }
 
-.main.active ~ .isi-konten {
-    margin-left: 100px;
+.konten-wrap .konten-isi form{
+    color: #143257;
+    display: grid;
+    grid-template-columns: 130px 0.8fr;
+    grid-gap: 10px;
+    z-index: 10;
+}
+
+.konten-wrap .konten-isi form label{
+    font-size: 18px;
+    font-weight: semi-bold;
+    color: #143257;
+    grid-column: 1 / 2;
+}
+
+.konten-wrap .konten-isi form input{
+    font-size: 18px;
+    color: #143257;
+    border-radius: 13px;
+    grid-column: 2 / 3;
+    z-index: 1;
+}
+
+.konten-wrap .konten-isi form select{
+    font-size: 18px;
+    color: #143257;
+    background-color: #ffffff;
+    border-radius: 13px;
+    z-index: 1;
+}
+
+.konten-wrap .konten-isi .isi-lebar {
+    width: 100%; 
+    height: 100px; 
+    resize: vertical; 
+    font-size: 18px;
+    color: #143257;
+    border-radius: 13px;
+    padding: 10px;
+    z-index: 1;
+}
+
+
+.main.active ~ .konten-wrap {
+    margin-left: 200px;
     transition: 0.5s;
 }
-
-.isi-konten .isi-dalam-konten table {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
-    min-width: 1000px;
-    margin: 20px 20px 0px 20px;
-}
-
-.isi-konten .isi-dalam-konten table img{
-    width: 100px;
-    text-align: center;
-}
-
-.isi-konten .isi-dalam-konten thead th {
-    font-size: 1rem;
-    color: #143257;
-    position: sticky;
-    top: 0;
-}
-
-.isi-konten .isi-dalam-konten tbody tr td {
-    font-size: 1rem;
-    color: #143257;
-}
-
-.isi-konten .isi-dalam-konten th,td {
-    border: 1px solid #143257;
-    padding: 0px 0px 0px 10px;
-    text-align: left;
-}
-
-.isi-konten .isi-dalam-konten tbody tr td.isi-cell {
-    max-width: 150px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.isi-konten .isi-dalam-konten button {
-    font-size: 1rem;
-    padding: 5px 5px;
-    border-radius: 20px;
-    background-color: #CC9A36;
-    color: #143257;
-    z-index: 1;
-}
-
-
-.isi-konten  .isi-dalam-konten {
-    height: 650px;
-    overflow: auto;
-    margin-left: 30px;
-    z-index: 1;
-}
-
