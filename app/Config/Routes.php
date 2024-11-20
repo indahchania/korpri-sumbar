@@ -30,6 +30,9 @@ $routes->post('/create_karir', 'Karir::save_karir');
 $routes->get('/konten', 'Konten::index');
 $routes->get('/create_konten', 'Konten::create_konten');
 $routes->post('/save_konten', 'Konten::save_konten');
+$routes->get('/edit_konten/(:num)', 'Konten::edit_konten/$1');
+$routes->post('konten/update/(:num)', 'Konten::update_konten/$1');
+$routes->get('delete_konten/(:num)', 'Konten::delete_konten/$1');
 // =======
 // $routes->get('/karir', 'Home::karir');
 

@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konten</title>
+    <title>Edit Konten</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <link rel="stylesheet" href="<?= base_url('css/konten.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('css/create_konten.css') ?>">
 </head>
 
 <body>
@@ -33,7 +33,7 @@
                 </li>
 
                 <li class="active-page">
-                    <a href="#">
+                    <a href="<?= base_url('konten') ?>">
                         <span class="icon">
                             <ion-icon name="albums-outline"></ion-icon>
                         </span>
@@ -81,51 +81,51 @@
             </div>
         </div>
 
-        <div class="isi-konten">
-            <div class="isi-dalam-konten">
-                <h1>Konten</h1>
-                <div class="nambah-konten">
-                    <a href="<?= base_url('create_konten') ?>"><button>Tambah Konten</button></a>
-                </div>
-                <br>
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th>Isi</th>
-                            <th>Gambar</th>
-                            <th>File</th>
-                            <th>Status</th>
-                            <th>Category</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($contents as $content): ?>
-                            <tr>
-                                <td><?= esc($content['content_title']) ?></td>
-                                <td><?= esc($content['content_author']) ?></td>
-                                <td class="isi-cell"><?= esc($content['content_body']) ?></td>
-                                <td>
-                                    <a href="<?= base_url('uploads/konten/' . esc($content['content_img'])) ?>" target="_blank">
-                                        <img src="<?= base_url('uploads/konten/' . esc($content['content_img'])) ?>" alt="Image">
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="<?= base_url('uploads/konten/' . esc($content['content_file'])) ?>" target="_blank">
-                                        View PDF
-                                    </a>
-                                </td>
-                                <td><?= esc($content['content_status']) ?></td>
-                                <td><?= esc($content['category_name']) ?></td>
-                                <td>
-                                    <a href="<?= base_url('edit_konten/' . esc($content['content_id'])) ?>"><button>Edit</button></a>
-                                    <a href="<?= base_url('delete_konten/' . esc($content['content_id'])) ?>"><button>Hapus</button></a>
-                            </tr>
+        <div class="konten-wrap">
+            <div class="konten-isi">
+                <h1>Edit Konten</h1>
+                <form action="<?= base_url('konten/update/' . $content['content_id']) ?>" method="POST" enctype="multipart/form-data"> <label for="kategori">Kategori</label>
+                    <select name="content_category" id="kategori">
+                        <?php foreach ($categories as $category): ?>
+                            <option value="<?= $category['concategory_id'] ?>" <?= ($category['concategory_id'] == $content['content_category']) ? 'selected' : '' ?>>
+                                <?= $category['category_name'] ?>
+                            </option>
                         <?php endforeach; ?>
-                    </tbody>
-                </table>
+                    </select>
+
+                    <br><label for="judul">Judul</label>
+                    <input type="text" id="judul" name="content_title" value="<?= esc($content['content_title']) ?>"><br>
+
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="content_author" value="<?= esc($content['content_author']) ?>"><br>
+
+                    <label for="isi">Isi</label>
+                    <textarea id="isi" class="isi-lebar" name="content_body"><?= esc($content['content_body']) ?></textarea><br>
+
+                    <label for="gambar">Gambar</label>
+                    <input type="file" id="gambar" accept="image/png, image/jpeg" name="content_img">
+                    <p>Gambar saat ini:
+                        <a href="<?= base_url('uploads/konten/' . esc($content['content_img'])) ?>" target="_blank">
+                            <?= esc($content['content_img']) ?>
+                        </a>
+                    </p><br>
+
+                    <label for="file">File</label>
+                    <input type="file" id="file" name="content_file">
+                    <p>File saat ini:
+                        <a href="<?= base_url('uploads/konten/' . esc($content['content_file'])) ?>" target="_blank">
+                            <?= esc($content['content_file']) ?>
+                        </a>
+                    </p><br>
+
+                    <label for="status">Status</label>
+                    <select name="content_status" id="status">
+                        <option value="publik" <?= ($content['content_status'] == 'publik') ? 'selected' : '' ?>>Publik</option>
+                        <option value="draft" <?= ($content['content_status'] == 'draft') ? 'selected' : '' ?>>Draft</option>
+                        <option value="arsip" <?= ($content['content_status'] == 'arsip') ? 'selected' : '' ?>>Arsip</option>
+                    </select>
+                    <br><input type="submit" value="Perbarui" class="simpan">
+                </form>
             </div>
         </div>
 
