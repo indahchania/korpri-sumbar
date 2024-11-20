@@ -12,7 +12,7 @@
         <div class="header-content">
             <img src="<?= base_url('img/korpri-header.png'); ?>" alt="Header Image" class="header-bg">
             <div class="header-left">
-                <a href="<?= base_url('korprisumbar'); ?>">
+                <a href="<?= base_url('/'); ?>">
                     <img src="<?= base_url('img/korprilogo.png'); ?>" alt="KORPRI Logo" class="logo">
                 </a>
             </div>
