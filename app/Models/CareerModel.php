@@ -6,41 +6,28 @@ use CodeIgniter\Model;
 
 class CareerModel extends Model
 {
-    protected $table            = 'career';
-    protected $primaryKey       = 'career_id';
-    protected $useAutoIncrement = true;
-    protected $returnType       = 'array';
-    protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields    = ["career_title", "career_author", "career_body", "career_img", "career_status", "career_category"];
+    protected $table = 'career';
+    protected $primaryKey = 'career_id';
+    protected $allowedFields = [
+        'career_title', 'career_author', 'career_body', 'career_status', 
+        'career_category', 'career_img', 'users_id'
+    ];
 
-    protected bool $allowEmptyInserts = false;
-    protected bool $updateOnlyChanged = true;
+    public function getCareersWithCategory()
+    {
+        return $this->db->table($this->table)
+            ->select('career.*, career_category.category_name')
+            ->join('career_category', 'career.career_category = career_category.carcategory_id', 'left')
+            ->get()
+            ->getResultArray();
+    }
 
-    protected array $casts = [];
-    protected array $castHandlers = [];
-
-    // Dates
-    protected $useTimestamps = false;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
-
-    // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
-
-    // Callbacks
-    protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
-    protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
-    protected $afterUpdate    = [];
-    protected $beforeFind     = [];
-    protected $afterFind      = [];
-    protected $beforeDelete   = [];
-    protected $afterDelete    = [];
+    public function getCategories()
+    {
+        return $this->db->table('career_category')
+            ->select('carcategory_id, category_name')
+            ->get()
+            ->getResultArray();
+    }
+    
 }

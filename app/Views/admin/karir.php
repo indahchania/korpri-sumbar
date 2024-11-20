@@ -89,6 +89,7 @@
                     <thead>
                         <tr>
                             <th>Judul</th>
+                            <th>Author</th>
                             <th>Kategori</th>
                             <th>Isi</th>
                             <th>Gambar</th>
@@ -96,6 +97,26 @@
                             <th>Aksi</th>
                         </tr>
                     </thead>
+                    <tbody>
+                    <?php foreach ($career as $career): ?>
+                        <tr>
+                            <td><?= $career['career_title'] ?></td>
+                            <td><?= esc($career['career_author']) ?></td>
+                            <td><?= esc($career['category_name']) ?></td>
+                            <td class="isi-cell"><?= esc($career['career_body']) ?></td>
+                            <td>
+                            <a href="<?= base_url('uploads/karir/' . esc($career['career_img'])) ?>" target="_blank">
+                                <img src="<?= base_url('uploads/karir/' . esc($career['career_img'])) ?>" alt="Image">
+                            </a>
+                            </td>
+                            <td><?= $career['career_status'] ?></td>
+                            <td>
+                                <a href="<?= base_url('edit_karir/' . $career['career_id']) ?>"><button>Edit</button></a>
+                                <a href="<?= base_url('delete_karir/' . $career['career_id']) ?>"><button>Hapus</button></a>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
                 </table>
             </div>
         </div>

@@ -24,7 +24,10 @@ $routes->post('/create_pages', 'Pages::create_pages');
 
 $routes->get('/karir', 'Karir::index');
 $routes->get('/create_karir', 'Karir::create_karir');
-$routes->post('/create_karir', 'Karir::save_karir');
+$routes->post('/save_karir', 'Karir::save_karir');
+$routes->get('/edit_karir/(:num)', 'Karir::edit_karir/$1');
+$routes->post('/karir/update/(:num)', 'Karir::update_karir/$1');
+$routes->get('/delete_karir/(:num)', 'Karir::delete_karir/$1');
 
 $routes->get('/konten', 'Konten::index');
 $routes->get('/create_konten', 'Konten::create_konten');
