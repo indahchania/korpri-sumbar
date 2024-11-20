@@ -34,13 +34,15 @@ $routes->post('konten/update/(:num)', 'Konten::update_konten/$1');
 $routes->get('delete_konten/(:num)', 'Konten::delete_konten/$1');
 
 
-// // Routes dinamis untuk semua kategori "Tentang"
-// $routes->get('korprisumbar/tentang/(:segment)', 'PageController::index/$1');
+// Routes dinamis untuk semua submenu "Tentang"
+// $routes->get('/tentang/(:segment)', 'PageController::index/$1');
 
-// // Routes statis lainnya untuk kompatibilitas jika diperlukan
-// $routes->get('korprisumbar/tentang/sejarah', 'Tentang::view/sejarah');
-// $routes->get('korprisumbar/tentang/visiMisi', 'Tentang::view/visiMisi');
-// $routes->get('korprisumbar/tentang/tujuanFungsi', 'Tentang::view/tujuanFungsi');
-// $routes->get('korprisumbar/tentang/pancaPrasetya', 'Tentang::view/pancaPrasetya');
-// $routes->get('korprisumbar/tentang/anggota', 'Tentang::view/anggota');
-// $routes->get('korprisumbar/tentang/programUtama', 'Tentang::view/programUtama');
+// Routes statis menu "Tentang" untuk kompatibilitas jika diperlukan
+$routes->get('/sejarah', 'Tentang::sejarah');
+$routes->get('/visiMisi', 'Tentang::visiMisi');
+$routes->get('/tujuanFungsi', 'Tentang::tujuanFungsi');
+$routes->get('/pancaPrasetya', 'Tentang::view/pancaPrasetya');
+$routes->get('/programUtama', 'Tentang::programUtama');
+
+// Routes dinamis untuk semua submenu "Media"
+$routes->get('/media/(:segment)', 'Media::index/$1');

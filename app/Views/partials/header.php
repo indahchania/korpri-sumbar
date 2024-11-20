@@ -29,7 +29,7 @@
         <ul>
             <li class="main-item">Tentang <span class="arrow">▼</span>
                 <ul>
-                    <li><a href="/korprisumbar/tentang/sejarah">Sejarah</a></li>
+                    <li><a href="/sejarah">Sejarah</a></li>
                     <li><a href="#">Visi dan Misi</a></li>
                     <li><a href="#">Tujuan dan Fungsi</a></li>
                     <li><a href="#">Panca Prasetya</a></li>
@@ -39,12 +39,13 @@
             </li>
             <li class="main-item">Media <span class="arrow">▼</span>
                 <ul>
-                    <li><a href="#">Berita</a></li>
-                    <li><a href="#">Kegiatan</a></li>
-                    <li><a href="#">Pengumuman</a></li>
-                    <li><a href="#">Publikasi Resmi</a></li>
+                    <li><a href="<?= base_url('media/berita'); ?>">Berita</a></li>
+                    <li><a href="<?= base_url('media/kegiatan'); ?>">Kegiatan</a></li>
+                    <li><a href="<?= base_url('media/pengumuman'); ?>">Pengumuman</a></li>
+                    <li><a href="<?= base_url('media/publikasi'); ?>">Publikasi Resmi</a></li>
                 </ul>
             </li>
+
             <li class="main-item">Karir <span class="arrow">▼</span>
                 <ul>
                     <li><a href="#">Fulltime</a></li>
