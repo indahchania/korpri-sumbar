@@ -84,7 +84,8 @@
         <div class="konten-wrap">
             <div class="konten-isi">
                 <h1>Edit Konten</h1>
-                <form action="<?= base_url('konten/update/' . $content['content_id']) ?>" method="POST" enctype="multipart/form-data"> <label for="kategori">Kategori</label>
+                <form action="<?= base_url('konten/update/' . $content['content_id']) ?>" method="POST" enctype="multipart/form-data"> 
+                    <label for="kategori">Kategori</label>
                     <select name="content_category" id="kategori">
                         <?php foreach ($categories as $category): ?>
                             <option value="<?= $category['concategory_id'] ?>" <?= ($category['concategory_id'] == $content['content_category']) ? 'selected' : '' ?>>

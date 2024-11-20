@@ -81,31 +81,28 @@
         <div class="konten-wrap">
             <div class="konten-isi">
                 <h1>Pages</h1>
-                <form action="<?php echo base_url('/create_pages') ?>" method="POST">
+                <form action="<?php echo base_url('/save_pages') ?>" method="POST" enctype="multipart/form-data">
                     <br><label for="kategori">Kategori</label>
-                        <select name="content_category" id="kategori">
-                            <option value="sejarah">Sejarah</option>
-                            <option value="visiMisi">Visi dan Misi</option>
-                            <option value="tujuanFungsi">Tujuan dan Fungsi</option>
-                            <option value="pancaPrasetya">Panca Prasetya</option>
-                            <option value="strukturOrganisasi">Struktur Organisasi</option>
-                            <option value="programUtama">Program Utama</option>
+                        <select name="pages_category" id="kategori">
+                        <?php foreach ($categories as $category): ?>
+                            <option value="<?= $category['pagescategory_id'] ?>"><?= $category['category_name'] ?></option>
+                        <?php endforeach; ?>
                         </select><br>
 
                     <br><label for="judul">Judul</label>
-                    <input type="text" id="judul"><br>
+                    <input type="text" id="judul" name="pages_title"><br>
 
                     <label for="author">Author</label>
-                    <input type="text" id="judul"><br>
+                    <input type="text" id="judul" name="pages_author"><br>
 
                     <label for="isi">Isi</label>
-                    <textarea id="isi" class="isi-lebar"></textarea><br>
+                    <textarea id="isi" class="isi-lebar" name="pages_body"></textarea><br>
 
                     <label for="gambar">Gambar</label>
-                    <input type="file" id="gambar" accept="image/png, image/jpeg"><br>
+                    <input type="file" id="gambar" accept="image/png, image/jpeg" name="pages_img"><br>
 
                     <label for="status">Status</label>
-                    <select name="status" id="status">
+                    <select name="pages_status" id="status">
                         <option value="publik">Publik</option>
                         <option value="draft">Draft</option>
                         <option value="arsip">Arsip</option>

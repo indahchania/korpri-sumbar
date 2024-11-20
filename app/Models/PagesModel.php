@@ -6,41 +6,28 @@ use CodeIgniter\Model;
 
 class PagesModel extends Model
 {
-    protected $table            = 'pages';
-    protected $primaryKey       = 'pages_id';
-    protected $useAutoIncrement = true;
-    protected $returnType       = 'array';
-    protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields    = ["pages_title", "pages_author", "pages_posted", "pages_body", "pages_img", "pages_status", "pages_name"];
+    protected $table = 'pages';
+    protected $primaryKey = 'pages_id';
+    protected $allowedFields = [
+        'pages_title', 'pages_author', 'pages_body', 'pages_status', 
+        'pages_category', 'pages_img', 'users_id'
+    ];
 
-    protected bool $allowEmptyInserts = false;
-    protected bool $updateOnlyChanged = true;
+    public function getPagesWithCategory()
+    {
+        return $this->db->table($this->table)
+            ->select('pages.*, pages_category.category_name')
+            ->join('pages_category', 'pages.pages_category = pages_category.pagescategory_id', 'left')
+            ->get()
+            ->getResultArray();
+    }
 
-    protected array $casts = [];
-    protected array $castHandlers = [];
-
-    // Dates
-    protected $useTimestamps = false;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
-
-    // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
-
-    // Callbacks
-    protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
-    protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
-    protected $afterUpdate    = [];
-    protected $beforeFind     = [];
-    protected $afterFind      = [];
-    protected $beforeDelete   = [];
-    protected $afterDelete    = [];
+    public function getCategories()
+    {
+        return $this->db->table('pages_category')
+            ->select('pagescategory_id, category_name')
+            ->get()
+            ->getResultArray();
+    }
+    
 }

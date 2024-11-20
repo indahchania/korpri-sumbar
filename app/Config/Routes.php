@@ -20,7 +20,10 @@ $routes->get('/admin', 'Home::admin');
 
 $routes->get('/pages', 'Pages::index');
 $routes->get('/create_pages', 'Pages::create_pages');
-$routes->post('/create_pages', 'Pages::create_pages');
+$routes->post('/save_pages', 'Pages::save_pages');
+$routes->get('/edit_pages/(:num)', 'Pages::edit_pages/$1');
+$routes->post('/pages/update/(:num)', 'Pages::update_pages/$1');
+$routes->get('/delete_pages/(:num)', 'Pages::delete_pages/$1');
 
 $routes->get('/karir', 'Karir::index');
 $routes->get('/create_karir', 'Karir::create_karir');
