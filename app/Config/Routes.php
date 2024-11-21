@@ -52,3 +52,6 @@ $routes->get('/programUtama', 'Tentang::programUtama');
 
 // Routes dinamis untuk semua submenu "Media"
 $routes->get('/media/(:segment)', 'Media::index/$1');
+
+// Route untuk halaman detail media
+$routes->get('/media/detail/(:num)', 'Media::detail/$1');

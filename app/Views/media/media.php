@@ -29,7 +29,11 @@
                             <img src="<?= base_url(!empty($content['content_img']) ? 'uploads/konten/' . $content['content_img'] : 'img/mediaDefault.png') ?>" 
                                  alt="<?= esc($content['content_title']) ?>" />
                             <h2><?= esc($content['content_title']) ?></h2>
-                            <p><?= esc(word_limiter($content['content_body'], 20)) ?></p>
+                            <p>
+                                <?= esc(strlen(html_entity_decode($content['content_body'])) > 125 
+                                    ? substr(html_entity_decode($content['content_body']), 0, 125) . '...' 
+                                    : html_entity_decode($content['content_body'])) ?>
+                            </p>
                             <a href="<?= base_url('media/detail/' . $content['content_id']) ?>" class="read-more">Selengkapnya</a>
                         </div>
                     <?php endforeach; ?>

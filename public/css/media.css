@@ -46,37 +46,50 @@ body {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex; /* Gunakan Flexbox */
+    flex-direction: column; /* Tata elemen secara vertikal */
+    justify-content: space-between; /* Elemen didistribusikan secara proporsional */
+    min-height: 400px; /* Tetapkan tinggi minimum yang sama untuk semua card */
+    padding: 10px; /* Opsional: Tambahkan padding untuk estetika */
 }
 
 .media-card img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: cover; /* Potong gambar jika melebihi ukuran */
 }
 
 .media-card h2 {
-    padding: 10px;
     font-size: 1.2rem;
     color: #CC9A36;
+    margin: 10px 0; /* Margin atas dan bawah */
 }
 
 .media-card p {
-    padding: 0 10px;
     font-size: 0.95rem;
     color: #143257;
     line-height: 1.5;
+    overflow: hidden; /* Sembunyikan teks yang melebihi tinggi */
+    text-overflow: ellipsis; /* Tambahkan ellipsis ("...") jika teks terpotong */
+    display: -webkit-box; /* Gunakan Flexbox untuk multiline */
+    -webkit-line-clamp: 3; /* Batasi hingga 3 baris teks */
+    -webkit-box-orient: vertical; /* Orientasi vertikal */
+    flex-grow: 1; /* Paragraf mengambil ruang yang tersisa */
+    min-height: 60px; /* Tinggi minimum untuk paragraf */
+    margin: 0; /* Pastikan margin konsisten */
 }
 
 .media-card .read-more {
     display: block;
     text-align: center;
-    margin: 10px;
+    margin-top: 10px;
     padding: 10px;
     background-color: #CC9A36;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Tombol tidak boleh mengecil */
 }
 
 .media-card .read-more:hover {

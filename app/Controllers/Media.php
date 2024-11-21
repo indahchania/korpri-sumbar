@@ -39,4 +39,21 @@ class Media extends BaseController
             'activeCategory' => $category,
         ]);
     }
+
+    // Fungsi untuk menampilkan detail konten
+    public function detail($id)
+    {
+        $contentModel = new ContentModel();
+
+        // Ambil konten beserta kategori berdasarkan ID
+        $content = $contentModel->getContentWithCategory($id);
+
+        if (!$content) {
+            // Jika konten tidak ditemukan, kembalikan ke halaman sebelumnya dengan pesan error
+            return redirect()->back()->with('error', 'Konten tidak ditemukan.');
+        }
+
+        // Tampilkan halaman detail dengan data
+        return view('media/mediaDetail', ['content' => $content]);
+    }
 }
