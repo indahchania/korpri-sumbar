@@ -29,7 +29,8 @@ dashboard.php
 </section>
 
 <!-- Structure Section -->
-<section id="structure-section" class="hidden">
+<br>
+<br><section id="structure-section" class="hidden">
     <h2>Struktur Organisasi</h2>
     <p>Struktur Organisasi KORPRI Sumatera Barat meliputi berbagai jenjang sebagai berikut:</p>
     <div class="structure-content">
@@ -38,7 +39,8 @@ dashboard.php
 </section>
 
 <!-- News Thumbnails-section -->
-<section id="newsThumbnails-section" class="hidden">
+<br>
+<br><section id="newsThumbnails-section" class="hidden">
     <h2>KORPRI Sumatera Barat Terkini</h2>
     <div class="newsThumbnails-content">
         <!-- Konten Berita Terkini -->
