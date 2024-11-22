@@ -2,19 +2,38 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
+use App\Models\PagesModel;
+use App\Models\PageCategoryModel;
 
 class Tentang extends BaseController
 {
-    public function sejarah()
+    public function index($categoryName = null)
     {
-        return view('tentang/sejarah');
-    }
+        $pagesModel = new PagesModel();
+        $pageCategoryModel = new PageCategoryModel();
 
-    public function visiMisi()
-    {
-        return view('tentang/visiMisi');
-    }
+        // Daftar kategori asli (dengan spasi)
+        $categories = $pageCategoryModel->findAll();
+        
+        // Ganti tanda hubung (-) menjadi spasi untuk kategori yang diterima di URL
+        if ($categoryName) {
+            $categoryNameFormatted = str_replace('-', ' ', $categoryName); // Mengubah "visi-dan-misi" menjadi "Visi dan Misi"
+            $selectedCategory = $pageCategoryModel->where('category_name', $categoryNameFormatted)->first();
+            
+            if ($selectedCategory) {
+                $pages = $pagesModel->where('pages_category', $selectedCategory['pagescategory_id'])
+                                    ->where('pages_status', 'publik')
+                                    ->findAll();
+            } else {
+                throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Kategori tidak ditemukan.");
+            }
+        }
 
-    // Tambahkan metode untuk setiap submenu lainnya
+        // Kirim data ke view
+        return view('tentang/tentang', [
+            'categories' => $categories,
+            'pages' => $pages,
+            'selectedCategory' => $categoryName,
+        ]);
+    }
 }

@@ -39,19 +39,14 @@ $routes->get('/edit_konten/(:num)', 'Konten::edit_konten/$1');
 $routes->post('konten/update/(:num)', 'Konten::update_konten/$1');
 $routes->get('delete_konten/(:num)', 'Konten::delete_konten/$1');
 
+$routes->get('/tentang', 'Tentang::index');           // Rute utama "Tentang"
+$routes->get('/tentang/(:any)', 'Tentang::index/$1'); // untuk halaman detail "Tentang"
 
-// Routes dinamis untuk semua submenu "Tentang"
-// $routes->get('/tentang/(:segment)', 'PageController::index/$1');
+$routes->get('/media/(:segment)', 'Media::index/$1');     // Rute utama "Media"
+$routes->get('/media/detail/(:num)', 'Media::detail/$1'); // untuk halaman detail "Media"
 
-// Routes statis menu "Tentang" untuk kompatibilitas jika diperlukan
-$routes->get('/sejarah', 'Tentang::sejarah');
-$routes->get('/visiMisi', 'Tentang::visiMisi');
-$routes->get('/tujuanFungsi', 'Tentang::tujuanFungsi');
-$routes->get('/pancaPrasetya', 'Tentang::view/pancaPrasetya');
-$routes->get('/programUtama', 'Tentang::programUtama');
+$routes->get('/karirMenu', 'KarirMenu::index');                   // Rute utama "Karir"
+$routes->get('/karirMenu/detail/(:num)', 'KarirMenu::detail/$1'); // untuk halaman detail "Karir"
 
-// Routes dinamis untuk semua submenu "Media"
-$routes->get('/media/(:segment)', 'Media::index/$1');
-
-// Route untuk halaman detail media
-$routes->get('/media/detail/(:num)', 'Media::detail/$1');
+$routes->get('kontak', 'Kontak::index');
+$routes->post('kontak/send', 'Kontak::send');

@@ -3,11 +3,11 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use CodeIgniter\HTTP\RequestInterface;
 use App\Models\PagesModel;
+use App\Models\PageCategoryModel;
 
-class Pages extends BaseController {
-
+class Pages extends BaseController 
+{
     public function index()
     {
         $PagesModel = new PagesModel();
@@ -45,7 +45,6 @@ class Pages extends BaseController {
             $pagesImg->move('uploads/pages', $newImgName);
         }
 
-
         // Ambil input dari form
         $data = [
             'pages_title'    => $this->request->getPost('pages_title'),
@@ -54,7 +53,7 @@ class Pages extends BaseController {
             'pages_img'      => $newImgName,
             'pages_status'   => $this->request->getPost('pages_status'),
             'pages_category' => $this->request->getPost('pages_category'),
-            'users_id'         => $users_id,
+            'users_id'       => $users_id,
         ];
 
         // Validasi kategori
@@ -112,7 +111,6 @@ class Pages extends BaseController {
             $pagesImg->move('uploads/pages', $newImgName);
         }
 
-
         // Ambil input dari form
         $data = [
             'pages_title'    => $this->request->getPost('pages_title'),
@@ -149,5 +147,32 @@ class Pages extends BaseController {
         $PagesModel->delete($pages_id);
         session()->setFlashdata('message', 'pages successfully deleted.');
         return redirect()->to(base_url('pages'));
+    }
+
+    public function tentang($categoryId = null)
+    {
+        $pagesModel = new PagesModel();
+        $pagesCategoryModel = new PageCategoryModel();
+
+        // Ambil kategori
+        $categories = $pagesCategoryModel->getCategories();
+
+        // Logging untuk memastikan kategori ID diterima dengan benar
+        log_message('debug', 'Category ID: ' . $categoryId);
+        log_message('debug', 'Categories: ' . json_encode($categories));
+
+        // Jika ID kategori tidak null, ambil halaman berdasarkan kategori
+        $pages = [];
+        if ($categoryId) {
+            $pages = $pagesModel->where('pages_category', $categoryId)
+                                ->where('pages_status', 'publik')
+                                ->findAll();
+        }
+
+        return view('tentang/tentang', [
+            'categories' => $categories,
+            'pages' => $pages,
+            'selectedCategory' => $categoryId,
+        ]);
     }
 }

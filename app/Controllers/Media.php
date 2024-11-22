@@ -33,10 +33,16 @@ class Media extends BaseController
             ->where('content_status', 'publik')
             ->findAll();
 
+        // Data breadcrumb
+        $breadcrumb = [
+            'category_name' => $category,
+        ];
+
         // Tampilkan view dengan data
         return view('media/media', [
             'contents' => $contents,
             'activeCategory' => $category,
+            'content' => $breadcrumb, // Menambahkan data breadcrumb ke view
         ]);
     }
 
@@ -53,7 +59,15 @@ class Media extends BaseController
             return redirect()->back()->with('error', 'Konten tidak ditemukan.');
         }
 
+        // Data breadcrumb untuk halaman detail
+        $breadcrumb = [
+            'category_name' => $content['category_name'] ?? 'Tidak Diketahui',
+        ];
+
         // Tampilkan halaman detail dengan data
-        return view('media/mediaDetail', ['content' => $content]);
+        return view('media/mediaDetail', [
+            'content' => $content,
+            'breadcrumb' => $breadcrumb, // Menambahkan breadcrumb ke detail
+        ]);
     }
 }

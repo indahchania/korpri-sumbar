@@ -95,3 +95,61 @@ body {
 .media-card .read-more:hover {
     background-color: #a6782e;
 }
+
+.breadcrumb {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #143257;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Menyesuaikan gaya tombol menu */
+.media-list {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Membuat elemen dalam satu baris */
+    gap: 10px; /* Jarak antar tombol */
+    justify-content: center; /* Menyelaraskan tombol di tengah */
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.media-list a {
+    text-decoration: none;
+    color: #143257; /* Warna teks default */
+    font-size: 1rem; /* Ukuran font */
+    padding: 5px 10px; /* Padding tombol */
+    border: 1px solid #143257; /* Garis tepi */
+    border-radius: 4px; /* Membuat sudut melengkung */
+    transition: background-color 0.3s ease; /* Efek transisi saat hover */
+}
+
+.media-list a.active,
+.media-list a:hover {
+    background-color: #CC9A36; /* Warna latar belakang aktif/hover */
+    color: #fff; /* Warna teks saat hover */
+}
+
+.media-list a:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .media-list {
+        flex-wrap: wrap; /* Membuat tombol menumpuk jika ruang tidak cukup */
+    }
+
+    .media-list a {
+        flex: 1 1 auto; /* Tombol menyesuaikan ukuran */
+        text-align: center; /* Teks di tengah */
+    }
+}
+
