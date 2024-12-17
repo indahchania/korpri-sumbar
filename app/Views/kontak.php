@@ -50,33 +50,6 @@
                 </iframe>
             </div>
         </div>
-
-        <!-- Form Kontak (Pesan) -->
-        <div class="kontak-form">
-            <h2>Kirim Pesan</h2>
-            <form action="<?= base_url('kontak/send') ?>" method="post">
-                <?= csrf_field() ?>
-
-                <div class="form-group">
-                    <label for="name">Nama Lengkap:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Pesan:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit">Kirim Pesan</button>
-                </div>
-            </form>
-        </div>
     </main>
 
     <?= view('partials/footer') ?>

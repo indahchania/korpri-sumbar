@@ -33,5 +33,6 @@ class PageController extends BaseController
         ];
 
         return view('tentang/dinamis', $data); // Gunakan view dinamis
+        return view('main/dashboard', $data);
     }
 }
