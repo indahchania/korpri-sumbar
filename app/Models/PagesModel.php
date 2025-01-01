@@ -9,8 +9,13 @@ class PagesModel extends Model
     protected $table = 'pages';
     protected $primaryKey = 'pages_id';
     protected $allowedFields = [
-        'pages_title', 'pages_author', 'pages_body', 'pages_status', 
-        'pages_category', 'pages_img', 'users_id'
+        'pages_title',
+        'pages_author',
+        'pages_body',
+        'pages_status',
+        'pages_category',
+        'pages_img',
+        'users_id'
     ];
 
     public function getPagesWithCategory()
@@ -22,6 +27,13 @@ class PagesModel extends Model
             ->getResultArray();
     }
 
+    public function getPagesByCategory($categoryId)
+    {
+        return $this->where('pages_category', $categoryId)
+            ->orderBy('pages_id', 'DESC') // Mengurutkan berdasarkan ID terbaru
+            ->findAll();
+    }
+
     public function getCategories()
     {
         return $this->db->table('pages_category')
@@ -29,5 +41,4 @@ class PagesModel extends Model
             ->get()
             ->getResultArray();
     }
-    
 }
