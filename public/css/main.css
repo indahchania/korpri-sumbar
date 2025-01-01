@@ -101,6 +101,7 @@ body {
     color: #143257;
 }
 
+<<<<<<< HEAD
 /* Main Section Fade Out */
 .main-section.fade-out {
     opacity: 0; /* Gunakan transparansi, bukan sembunyikan sepenuhnya */
@@ -113,6 +114,8 @@ body {
     transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out;
 }
 
+=======
+>>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
 .main-image {
     width: 100%;
     height: auto;
@@ -167,6 +170,7 @@ body {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+<<<<<<< HEAD
 .button2-link {
     display: block;
     text-align: center; /* Rata tengah teks pada button */
@@ -180,6 +184,8 @@ body {
     transition: background-color 0.3s ease;
 }
 
+=======
+>>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
 /* Styling for Info Section */
 #info-section, #structure-section #newsThumbnails-section {
     padding: 60px 20px;
@@ -194,7 +200,11 @@ body {
 #info-section h2, #structure-section h2, #newsThumbnails-section h2 {
     font-size: 2rem;
     color: #CC9A36;
+<<<<<<< HEAD
     margin-top: -50px;
+=======
+    margin-top: -25px;
+>>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
     margin-bottom: 35px;
     font-weight: 600;
     text-align: center;
@@ -208,6 +218,29 @@ body {
     text-align: justify;
 }
 
+<<<<<<< HEAD
+=======
+/* Hidden by default */
+.hidden {
+    display: none;
+}
+
+.hidden-fade {
+    opacity: 0;
+}
+
+/* Animasi mainSection memudar */
+.fade-out {
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+/* Saat memudar, opacity berkurang */
+.fade-out.hidden-fade {
+    opacity: 0;
+}
+
+>>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
 /* Animasi muncul dengan scale */
 .info-section-visible, .structure-section-visible {
     display: block;
@@ -222,6 +255,7 @@ body {
     transform: scale(1);
 }
 
+<<<<<<< HEAD
 /* Info Section Animasi */
 .hidden {
     display: none;
@@ -322,6 +356,8 @@ body {
     transform: scale(1.05);
 }
 
+=======
+>>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
 /* Thumbnail styling */
 .newsThumbnails-section {
     display: flex;
@@ -338,6 +374,7 @@ body {
     border-radius: 8px;
 }
 
+<<<<<<< HEAD
 .newsThumbnails-content {
     display: flex;
     gap: 20px;
@@ -438,6 +475,8 @@ body {
     }
 }
 
+=======
+>>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
 /* Side Menu Styling */
 .side-menu {
     position: fixed;

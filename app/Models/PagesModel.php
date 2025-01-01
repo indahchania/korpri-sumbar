@@ -9,6 +9,7 @@ class PagesModel extends Model
     protected $table = 'pages';
     protected $primaryKey = 'pages_id';
     protected $allowedFields = [
+<<<<<<< HEAD
         'pages_title',
         'pages_author',
         'pages_body',
@@ -16,6 +17,10 @@ class PagesModel extends Model
         'pages_category',
         'pages_img',
         'users_id'
+=======
+        'pages_title', 'pages_author', 'pages_body', 'pages_status', 
+        'pages_category', 'pages_img', 'users_id'
+>>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
     ];
 
     public function getPagesWithCategory()
@@ -27,6 +32,7 @@ class PagesModel extends Model
             ->getResultArray();
     }
 
+<<<<<<< HEAD
     public function getPagesByCategory($categoryId)
     {
         return $this->where('pages_category', $categoryId)
@@ -34,6 +40,8 @@ class PagesModel extends Model
             ->findAll();
     }
 
+=======
+>>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
     public function getCategories()
     {
         return $this->db->table('pages_category')
@@ -41,4 +49,8 @@ class PagesModel extends Model
             ->get()
             ->getResultArray();
     }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
 }
