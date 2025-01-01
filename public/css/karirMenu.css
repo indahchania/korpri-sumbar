@@ -1,0 +1,125 @@
+.container {
+    padding: 20px;
+}
+
+.main-section {
+    padding-top: 140px; /* Tambahkan jarak dari header */
+}
+
+.section-title {
+    font-size: 0.9rem; /* Ukuran font kecil */
+    color: #CC9A36; /* Warna teks */
+    text-align: left; /* Menyelaraskan teks ke kiri */
+    margin: 20px 0; /* Jarak atas dan bawah */
+}
+
+.career-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 konten dalam 1 baris */
+    gap: 20px; /* Jarak antar konten */
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .career-list {
+        grid-template-columns: 1fr; /* 1 konten dalam 1 baris */
+    }
+}
+
+.career-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.career-item:hover {
+    transform: scale(1.02); /* Efek saat hover */
+}
+
+.career-image {
+    width: 100%; /* Gambar memenuhi lebar container */
+    height: 200px; /* Tinggi gambar tetap */
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+    border-radius: 8px; /* Opsional: untuk menambahkan border melengkung */
+}
+
+/* Gambar khusus untuk halaman detail */
+.detail-career-image {
+    display: block;
+    max-width: 600px; /* Atur ukuran maksimum gambar */
+    width: 100%; /* Gambar memenuhi container */
+    height: auto; /* Pertahankan proporsi gambar */
+    margin: 20px auto; /* Pusatkan gambar dengan jarak atas dan bawah */
+    object-fit: cover; /* Potong gambar untuk menyesuaikan area tanpa distorsi */
+    border-radius: 8px; /* Opsional: membuat sudut gambar melengkung */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .detail-career-image {
+        max-width: 100%; /* Gambar memenuhi lebar layar */
+        max-height: 300px; /* Batasi tinggi maksimum pada layar kecil */
+    }
+}
+
+.career-title {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #143257;
+}
+
+.career-meta {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.career-description {
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.button-link {
+    background-color: #CC9A36;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.button-link:hover {
+    background-color: #f9e6b2;
+    color: #143257;
+}
+
+.no-data {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #999;
+    margin-top: 20px;
+}
+
+/* Breadcrumb Navigasi */
+.breadcrumb {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.breadcrumb a {
+    color: #143257; /* Warna tautan */
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
