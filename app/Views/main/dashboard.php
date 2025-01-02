@@ -74,7 +74,7 @@ dashboard.php
                         <div class="news-details">
                             <h3><?= esc($content['content_title']) ?></h3>
                             <p><?= substr(strip_tags($content['content_body']), 0, 125) ?>...</p>
-                            <a href="<?= site_url('media/detail/' . $content['content_id']) ?>" class="button-link">Selengkapnya</a>
+                            <a href="<?= site_url('media/detail/' . $content['content_id']) ?>" class="read-more">Selengkapnya</a>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -83,6 +83,7 @@ dashboard.php
             <?php endif; ?>
         </div>
     </section>
+
     <br>
     <?= view('partials/footer') ?>
 

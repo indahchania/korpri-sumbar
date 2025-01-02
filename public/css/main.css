@@ -324,85 +324,80 @@ body {
 }
 
 .newsThumbnails-content {
-    display: flex;
-    flex-wrap: wrap; /* Untuk memastikan responsif */
-    gap: 20px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsif */
+    gap: 20px; /* Jarak antar card */
+    justify-content: center; /* Pusatkan elemen */
 }
 
-/* News Item Styling */
 .news-item {
-    display: flex;
-    flex-direction: row; /* Mengatur layout horizontal */
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 600px; /* Lebar card */
-    max-width: 100%; /* Responsif */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Tata elemen secara vertikal */
+    justify-content: space-between; /* Elemen didistribusikan secara proporsional */
+    min-height: 400px; /* Tetapkan tinggi minimum yang sama untuk semua card */
 }
 
-.news-item:hover {
-    transform: scale(1.03);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Thumbnail Wrapper */
 .news-thumbnail-wrapper {
-    flex: 0 0 200px; /* Ukuran tetap untuk thumbnail */
+    width: 100%;
+    height: 200px; /* Tetapkan tinggi gambar */
     overflow: hidden;
-    height: 150px; /* Tinggi tetap */
-    background-color: #f9f9f9; /* Warna latar jika gambar kosong */
+    background-color: #f9f9f9;
 }
 
 .news-thumbnail {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Gambar proporsional */
+    object-fit: cover; /* Gambar akan dipotong agar proporsional */
 }
 
-/* News Details */
 .news-details {
-    flex: 1; /* Isi sisa ruang */
-    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 15px;
+    flex-grow: 1; /* Isi ruang tersisa */
 }
 
 .news-details h3 {
     font-size: 1.2rem;
     color: #CC9A36;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 .news-details p {
     font-size: 0.95rem;
-    color: #555;
-    line-height: 1.6;
-    text-align: justify;
-    margin-bottom: 15px;
-    flex-grow: 1; /* Biarkan teks mengisi ruang */
+    color: #143257;
+    line-height: 1.5;
+    overflow: hidden; /* Sembunyikan teks yang melebihi tinggi */
+    text-overflow: ellipsis; /* Tambahkan ellipsis ("...") jika teks terpotong */
+    display: -webkit-box; /* Gunakan Flexbox untuk multiline */
+    -webkit-line-clamp: 3; /* Batasi hingga 3 baris teks */
+    -webkit-box-orient: vertical; /* Orientasi vertikal */
+    flex-grow: 1; /* Paragraf mengambil ruang yang tersisa */
+    margin: 0; /* Konsisten margin */
 }
 
-.news-details .button-link {
-    align-self: flex-start;
-    font-size: 0.9rem;
-    padding: 8px 15px;
+.news-details .read-more {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
     background-color: #CC9A36;
     color: #fff;
-    border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Tombol tidak mengecil */
 }
 
-.news-details .button-link:hover {
-    background-color: #f0b76b;
-    transform: scale(1.05);
+.news-details .read-more:hover {
+    background-color: #a6782e;
 }
-
 
 
 /* Side Menu Styling */
