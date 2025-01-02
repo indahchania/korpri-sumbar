@@ -32,59 +32,31 @@ dashboard.php
 
     <!-- Structure Section -->
     <br>
-<<<<<<< HEAD
-    <br>
-    <section id="struktur-organisasi-section">
-        <h2>Struktur Organisasi</h2>
-        <p>Struktur Organisasi KORPRI Sumatera Barat meliputi berbagai jenjang sebagai berikut:</p>
-        <div class="struktur-organisasi-content">
-            <?php if (!empty($pages)): ?>
-                <?php foreach ($pages as $page): ?>
-                    <div class="struktur-item">
-                        <?php if (!empty($page['pages_img'])): ?>
-                            <div class="struktur-thumbnail-wrapper">
-                                <img src="<?= base_url('uploads/pages/' . esc($page['pages_img'])) ?>"
-                                    alt="<?= esc($page['pages_title']) ?>"
-                                    class="struktur-thumbnail">
-                            </div>
-                        <?php endif; ?>
-                        <p><?= substr(strip_tags($page['pages_body']), 0, 450) ?>...</p>
-                        <a href="<?= site_url('tentang/struktur-organisasi/' . $page['pages_id']) ?>" class="button-link">Selengkapnya</a>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>Tidak ada data struktur organisasi.</p>
-=======
-    <br><!-- Structure Section -->
-    <section id="structure-section">
-        <h2>Struktur Organisasi</h2>
-        <p>Struktur Organisasi KORPRI Sumatera Barat meliputi berbagai jenjang sebagai berikut:</p>
-        <div class="structure-content">
-        <?php if (!empty($pages)): ?>
-                <?php foreach ($pages as $page): ?>
-                    <div class="content-item">
-                        <h3><?= esc($page['pages_title']) ?></h3>
-                        <p class="meta">
-                            Oleh <?= esc($page['pages_author']) ?> | <?= date('d M Y', strtotime($page['pages_posted'])) ?>
-                        </p>
-                        <?php if (!empty($page['pages_img'])): ?>
-                            <img src="<?= base_url('uploads/pages/' . esc($page['pages_img'])) ?>"
-                                alt="<?= esc($page['pages_title']) ?>"
-                                class="content-image">
-                        <?php endif; ?>
-                        <div class="content-body">
-                            <?= $page['pages_body'] ?>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>Tidak ada data untuk kategori ini.</p>
->>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
-            <?php endif; ?>
-        </div>
-    </section>
 
-<<<<<<< HEAD
+    <section id="struktur-organisasi-section">
+    <h2>Struktur Organisasi</h2>
+    <p>Struktur Organisasi KORPRI Sumatera Barat meliputi berbagai jenjang sebagai berikut:</p>
+    <div class="struktur-organisasi-content">
+        <?php if (!empty($pages)): ?>
+            <?php foreach ($pages as $page): ?>
+                <div class="struktur-item">
+                    <?php if (!empty($page['pages_img'])): ?>
+                        <div class="struktur-thumbnail-wrapper">
+                            <img src="<?= base_url('uploads/pages/' . esc($page['pages_img'])) ?>" 
+                                 alt="<?= esc($page['pages_title']) ?>" 
+                                 class="struktur-thumbnail">
+                        </div>
+                    <?php endif; ?>
+                    <p><strong><?= esc($page['pages_title']) ?></strong></p>
+                    <p><?= esc($page['pages_body']) ?></p>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>Tidak ada data struktur organisasi.</p>
+        <?php endif; ?>
+    </div>
+</section>
+
     <!-- News Thumbnails-section -->
     <br>
     <br>
@@ -110,22 +82,19 @@ dashboard.php
 
     <br>
 
-=======
+
 
     <!-- News Thumbnails-section -->
-    <br>
+    <!-- <br>
     <br>
     <section id="newsThumbnails-section" class="hidden">
         <h2>KORPRI Sumatera Barat Terkini</h2>
-        <div class="newsThumbnails-content">
+        <div class="newsThumbnails-content"> -->
             <!-- Konten Berita Terkini -->
-        </div>
-    </section>
-
->>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
+        <!-- </div>
+    </section> -->
     <?= view('partials/footer') ?>
 
     <script src="<?= base_url('js/main.js') ?>"></script>
 </body>
-
 </html>
