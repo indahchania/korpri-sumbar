@@ -101,21 +101,7 @@ body {
     color: #143257;
 }
 
-<<<<<<< HEAD
-/* Main Section Fade Out */
-.main-section.fade-out {
-    opacity: 0; /* Gunakan transparansi, bukan sembunyikan sepenuhnya */
-    transition: opacity 1.2s ease-in-out; /* Perpanjang durasi transisi */
-}
 
-.main-section.hidden-fade {
-    opacity: 0; /* Jika ingin menyembunyikan sepenuhnya */
-    visibility: hidden;
-    transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out;
-}
-
-=======
->>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
 .main-image {
     width: 100%;
     height: auto;
@@ -170,22 +156,6 @@ body {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-<<<<<<< HEAD
-.button2-link {
-    display: block;
-    text-align: center; /* Rata tengah teks pada button */
-    padding: 10px;
-    background-color: #CC9A36; /* Warna gold */
-    color: #fff; /* Warna teks putih */
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-}
-
-=======
->>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
 /* Styling for Info Section */
 #info-section, #structure-section #newsThumbnails-section {
     padding: 60px 20px;
@@ -200,11 +170,7 @@ body {
 #info-section h2, #structure-section h2, #newsThumbnails-section h2 {
     font-size: 2rem;
     color: #CC9A36;
-<<<<<<< HEAD
-    margin-top: -50px;
-=======
     margin-top: -25px;
->>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
     margin-bottom: 35px;
     font-weight: 600;
     text-align: center;
@@ -218,8 +184,6 @@ body {
     text-align: justify;
 }
 
-<<<<<<< HEAD
-=======
 /* Hidden by default */
 .hidden {
     display: none;
@@ -240,7 +204,6 @@ body {
     opacity: 0;
 }
 
->>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
 /* Animasi muncul dengan scale */
 .info-section-visible, .structure-section-visible {
     display: block;
@@ -253,20 +216,6 @@ body {
 .info-section-visible.show, .structure-section-visible.show {
     opacity: 1;
     transform: scale(1);
-}
-
-<<<<<<< HEAD
-/* Info Section Animasi */
-.hidden {
-    display: none;
-    opacity: 0;
-    transition: opacity 1.2s ease-in-out;
-}
-
-.show {
-    display: block;
-    opacity: 1;
-    transition: opacity 1.2s ease-in-out; /* Perpanjang durasi transisi */
 }
 
 /* Struktur Organisasi Section */
@@ -356,46 +305,43 @@ body {
     transform: scale(1.05);
 }
 
-=======
->>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
-/* Thumbnail styling */
-.newsThumbnails-section {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
 
-.newsThumbnails-section div {
-    width: 30%;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+/* News Section Styling */
+#newsThumbnails-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    margin: 20px 0;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-<<<<<<< HEAD
+#newsThumbnails-section h2 {
+    text-align: center;
+    color: #CC9A36;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 .newsThumbnails-content {
     display: flex;
+    flex-wrap: wrap; /* Untuk memastikan responsif */
     gap: 20px;
-    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
 }
 
+/* News Item Styling */
 .news-item {
-    width: 30%;
-    min-width: 280px;
+    display: flex;
+    flex-direction: row; /* Mengatur layout horizontal */
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
+    width: 600px; /* Lebar card */
+    max-width: 100%; /* Responsif */
 }
 
 .news-item:hover {
@@ -403,80 +349,62 @@ body {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Thumbnail Wrapper */
+.news-thumbnail-wrapper {
+    flex: 0 0 200px; /* Ukuran tetap untuk thumbnail */
+    overflow: hidden;
+    height: 150px; /* Tinggi tetap */
+    background-color: #f9f9f9; /* Warna latar jika gambar kosong */
+}
+
 .news-thumbnail {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
+    height: 100%;
+    object-fit: cover; /* Gambar proporsional */
 }
 
-.news-item h3 {
-    font-size: 1.1rem;
+/* News Details */
+.news-details {
+    flex: 1; /* Isi sisa ruang */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-details h3 {
+    font-size: 1.2rem;
     color: #CC9A36;
-    margin: 10px 0;
-    text-align: center;
-    padding: 0 10px
+    margin-bottom: 10px;
 }
 
-.news-item p {
-    font-size: 0.95rem; /* Ukuran font */
-    color: #143257; /* Warna teks */
-    line-height: 1.5; /* Jarak antar baris */
-    text-align: justify; /* Rata kanan-kiri */
-    overflow: hidden; /* Sembunyikan teks berlebih */
-    text-overflow: ellipsis; /* Tambahkan elipsis ("...") jika teks terpotong */
-    display: -webkit-box; /* Gunakan Flexbox untuk multiline */
-    -webkit-line-clamp: 6; /* Batasi hingga 6 baris teks */
-    -webkit-box-orient: vertical; /* Orientasi vertikal */
-    margin: 10px 0; /* Margin atas dan bawah */
-    padding: 0 10px; /* Padding kanan-kiri agar konsisten */
+.news-details p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Biarkan teks mengisi ruang */
 }
 
-@media (max-width: 768px) {
-    .newsThumbnails-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .news-item {
-        width: 90%;
-    }
-
-    .news-item h3,
-    .news-item p {
-        padding: 0 8px; /* Sesuaikan padding untuk layar kecil */
-    }
-
-    .struktur-organisasi-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .struktur-thumbnail {
-        width: 100%; /* Gunakan lebar penuh */
-        height: auto; /* Tinggi menyesuaikan */
-        aspect-ratio: 2100 / 1275; /* Atur rasio gambar */
-        object-fit: contain; /* Pastikan seluruh gambar terlihat */
-        border-radius: 8px;
-        background-color: #f9f9f9; /* Warna latar belakang jika ada ruang kosong */
-    }
-
-    .struktur-item h3 {
-        font-size: 1.2rem; /* Sesuaikan ukuran judul */
-    }
-
-    .struktur-item p {
-        font-size: 0.95rem; /* Sesuaikan ukuran teks */
-    }
-
-    .button-link {
-        font-size: 0.85rem; /* Ukuran font button lebih kecil */
-        padding: 8px; /* Kurangi padding pada layar kecil */
-    }
+.news-details .button-link {
+    align-self: flex-start;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    background-color: #CC9A36;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-=======
->>>>>>> f3902e17febd08a7c839eaa2b0b3d75cf8967ad8
+.news-details .button-link:hover {
+    background-color: #f0b76b;
+    transform: scale(1.05);
+}
+
+
+
 /* Side Menu Styling */
 .side-menu {
     position: fixed;
